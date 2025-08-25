@@ -4,6 +4,34 @@ This project is an end-to-end system to detect plant leaf diseases using deep le
 
 ---
 
+## Project Structure
+
+```
+Plant-Disease-Detection/
+│
+├── data/                   # Dataset folder
+│   ├── splits/             # Train/Test split
+│   │   ├── train/          # Training images organized in class folders
+│   │   └── test/           # Testing images organized in class folders
+│   └── color/              # Full color dataset (optional)
+│
+├── models/                 # Saved model weights
+│   └── best_resnet50.pth   # Trained model
+│
+├── notebooks/              # Jupyter notebooks
+│   ├── 01_dataloader.ipynb # Load dataset and create DataLoader
+│   ├── 02_transforms.ipynb # Preprocessing and augmentation
+│   ├── 03_model_resnet.ipynb # Define ResNet50 model with classifier
+│   ├── 04_train.ipynb      # Training loop with GPU support and checkpointing
+│   └── 05_evaluate.ipynb   # Evaluation metrics and confusion matrix
+│
+├── 06_deployment_gui.py    # Standalone GUI for leaf disease prediction
+├── README.md               # Project documentation (this file)
+└── requirements.txt        # Required Python libraries (optional)
+```
+
+---
+
 ## Dataset
 
 **Dataset used:** PlantVillage Dataset (Color Images)
@@ -26,21 +54,6 @@ data/
 **Split:**
 - `train/` — used for training the model
 - `test/` — used for evaluating model performance
-
----
-
-## Project Files
-
-| File/Notebook | Description |
-|---------------|-------------|
-| `01_dataloader.ipynb` | Loads dataset, applies transforms, and creates DataLoader for training and testing. GPU-enabled. |
-| `02_transforms.ipynb` | Applies image preprocessing and augmentation and visualizes sample images. |
-| `03_model_resnet.ipynb` | Implements ResNet50 with a custom classifier head. |
-| `04_train.ipynb` | Trains the model on GPU, saves checkpoints after every epoch, logs loss and accuracy. |
-| `05_evaluate.ipynb` | Evaluates model performance on test data, generates accuracy and confusion matrix. |
-| `06_deployment_gui.py` | Standalone GUI using CustomTkinter. Allows image upload, prediction, and displays confidence. |
-| `models/best_resnet50.pth` | Trained model weights saved after training. |
-| `README.md` | Project documentation (this file). |
 
 ---
 
@@ -137,5 +150,5 @@ Linear(2048 -> 512) → ReLU → Dropout(0.3) → Linear(512 -> num_classes)
 
 ---
 
-This project is designed so that **even non-coders can understand and use it** by following the instructions above.
+This project is designed so that even non-coders can understand and use it by following the instructions above.
 
