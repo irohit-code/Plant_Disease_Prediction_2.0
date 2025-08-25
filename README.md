@@ -60,7 +60,7 @@ data/
 ## Tools & Libraries
 
 - Python 3.x
-- PyTorch
+- PyTorch (For GPU acceletation)
 - torchvision
 - PIL / Pillow
 - CustomTkinter
@@ -73,7 +73,7 @@ data/
 
 ### 1. Clone the repository
 ```
-git clone <your-repo-url>
+git clone https://github.com/irohit-code/Plant_Disease_Prediction_2.0.git
 cd Plant-Disease-Detection
 ```
 
